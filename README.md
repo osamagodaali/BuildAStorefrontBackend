@@ -81,9 +81,12 @@ POSTGRES_DB = store_dev
 POSTGRES_DB_TEST = store_test
 POSTGRES_user = postgres
 POSTGRES_password = postgres
-BCRYPT_PASSWORD = BCRYPT_PASSWORD
+BCRYPT_PASSWORD = kaylee
 SALT_ROUNDS = 10
-TOKEN_SECRET = TOKEN_SECRET
+
+TOKEN_SECRET = kaylee
+TOKEN_TEST = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6Im9tYXIiLCJmaXJzdG5hbWUiOiJvbWFyIiwibGFzdG5hbWUiOiJvc2FtYSIsImVtYWlsIjoib21hckBnbWFpbC5jb20ifSwiaWF0IjoxNjY1NjgxNjQyfQ.AOodsZtdAU26jkitXJ0i_-K0PgKVplBGV38wjFrjcD0'
+
 ```
 
 ## Start App

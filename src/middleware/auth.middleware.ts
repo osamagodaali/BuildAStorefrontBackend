@@ -3,7 +3,7 @@ import config from '../config'
 import jwt from 'jsonwebtoken'
 import Error from '../interfaces/error.interface'
 
-export const checkVaildToken = async (req: Request, __res: Response, next: NextFunction) => {
+const checkVaildToken = async (req: Request, __res: Response, next: NextFunction) => {
   try {
     const authorizationHeader : string | undefined = req.headers.authorization
     const token : string = authorizationHeader ? authorizationHeader.split(' ')[1] : ''
@@ -21,3 +21,5 @@ export const checkVaildToken = async (req: Request, __res: Response, next: NextF
     next(error)
   }
 }
+
+export default checkVaildToken

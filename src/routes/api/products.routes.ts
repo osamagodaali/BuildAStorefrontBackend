@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import * as authControllers from '../../controllers/auth.controllers'
 import * as productsControllers from '../../controllers/products.controllers'
-import authMiddleware from '../../middleware/auth.middleware'
+import checkVaildToken from '../../middleware/auth.middleware'
 
 const routes = Router()
 
@@ -9,15 +9,15 @@ routes.route('/authentacate').post(authControllers.userAuth)
 
 routes
   .route('/')
-  .get(authMiddleware, productsControllers.getAllProducts)
-  .post(authMiddleware, productsControllers.createProduct)
+  .get(checkVaildToken, productsControllers.getAllProducts)
+  .post(checkVaildToken, productsControllers.createProduct)
 routes
   .route('/category/:categoryName')
-  .get(authMiddleware, productsControllers.getAllProductsByCategory)
+  .get(checkVaildToken, productsControllers.getAllProductsByCategory)
 routes
   .route('/:id')
-  .get(authMiddleware, productsControllers.getProduct)
-  .patch(authMiddleware, productsControllers.updateProduct)
-  .delete(authMiddleware, productsControllers.deleteProduct)
+  .get(checkVaildToken, productsControllers.getProduct)
+  .patch(checkVaildToken, productsControllers.updateProduct)
+  .delete(checkVaildToken, productsControllers.deleteProduct)
 
 export default routes

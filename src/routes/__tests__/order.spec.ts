@@ -7,13 +7,13 @@ import Order from '../../types/order.type'
 import UserModel from '../../models/user.model'
 import ProductModel from '../../models/product.model'
 import OrderModel from '../../models/order.model'
+import config from '../../config'
 
 const userModel = new UserModel()
 const productModel = new ProductModel()
 const orderModel = new OrderModel()
 const request = supertest(app)
-const token =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6Im9tYXIiLCJmaXJzdG5hbWUiOiJvbWFyIiwibGFzdG5hbWUiOiJvc2FtYSIsImVtYWlsIjoib21hckBnbWFpbC5jb20ifSwiaWF0IjoxNjY1NjgxNjQyfQ.AOodsZtdAU26jkitXJ0i_-K0PgKVplBGV38wjFrjcD0'
+const token = config.tokenTest
 
 describe('Test Orders Routes Module', () => {
   const omar = {
